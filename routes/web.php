@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\Site;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [Site\HomeController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('painel')->group(function(){
+    Route::get('/', [Admin\HomeController::class, 'index']);
 });
