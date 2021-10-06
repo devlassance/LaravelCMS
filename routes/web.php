@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Site;
 
 /*
@@ -18,10 +19,9 @@ use App\Http\Controllers\Site;
 
 Route::get('/', [Site\HomeController::class, 'index']);
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('painel')->group(function(){
     Route::get('/', [Admin\HomeController::class, 'index']);
+    Route::get('login', [Admin\Auth\LoginController::class, 'showlogin'])->name('login');
 });
