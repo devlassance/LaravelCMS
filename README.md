@@ -8,4 +8,4 @@
 </p>
 
 ## Laravel CMS
-Desenvolvimento de um CMS completo usando Laravel junto ao AdminLTE 
+Desenvolvimento de um CMS completo usando Laravel junto ao AdminLTE, com ele é possível criar posts reais com um editor de texto richText e a possibilidade de incluir fotos. 
