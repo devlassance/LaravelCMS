@@ -39,6 +39,14 @@ class LoginController extends Controller
     }
 
     public function showlogin(){
-        echo "Login";
+        return view('admin.login');
+    }
+
+    public function loginAuth(){
+
+    }
+
+    public function authenticate(){
+        
     }
 }

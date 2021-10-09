@@ -24,4 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('painel')->group(function(){
     Route::get('/', [Admin\HomeController::class, 'index']);
     Route::get('login', [Admin\Auth\LoginController::class, 'showlogin'])->name('login');
+    Route::post('login', [Admin\Auth\LoginController::class, 'authenticate'])->name('auth.login');
+
+    Route::get('register', [Admin\Auth\RegisterController::class, 'showregister'])->name('register');
+    Route::post('register', [Admin\Auth\RegisterController::class, 'authenticate'])->name('auth.register');
 });
